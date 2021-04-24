@@ -1,0 +1,88 @@
+
+<section id="container">
+<!--header start-->
+<header class="header fixed-top clearfix">
+<!--logo start-->
+<div class="brand">
+
+    <a href="/" class="logo">
+        JOMONS
+    </a>
+    <div class="sidebar-toggle-box">
+        <div class="fa fa-bars"></div>
+    </div>
+</div>
+</header>
+<!--header end-->
+<!--sidebar start-->
+<aside>
+    <div id="sidebar" class="nav-collapse">
+        <!-- sidebar menu start-->
+        <div class="leftside-navigation">
+            <ul class="sidebar-menu" id="nav-accordion">
+                <li class="sub-menu">
+					
+                    <a href="/admin/adminPage"><i class="fa fa fa-user"></i>Admin</a>
+                </li>
+				<li class="sub-menu">
+					
+                    <a href="/admin/editUser"><i class="fa fa-edit"></i>Edit Users</a>
+                </li>
+            </ul>            </div>
+        <!-- sidebar menu end-->
+    </div>
+</aside>
+<!--sidebar end-->
+<!--main content start-->
+<section id="main-content">
+	<section class="wrapper">
+		<div class="table-agile-info">
+ <div class="panel panel-default">
+    <div class="panel-heading">
+     User Details
+    </div>
+    <div>
+      <table class="table" ui-jq="footable" ui-options='{
+        "paging": {
+          "enabled": true
+        },
+        "filtering": {
+          "enabled": true
+        },
+        "sorting": {
+          "enabled": true
+        }}'>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Mail Id</th>
+            <th data-breakpoints="xs" >Phone number</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each response}}
+          <tr >
+            <td>{{this.name}}</td>
+            <td>{{this.mail}}</td>
+            <td>{{this.mobile}}</td>
+
+          </tr>  
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</section>
+ <!-- footer -->
+ <div class="footer">
+    <div>
+      <h4 class="designed">Designed by SHINU VARGHESE</h4>
+    </div>
+  </div>
+<!-- / footer -->
+</section>
+
+<!--main content end-->
+</section>
+<script></script>

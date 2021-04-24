@@ -1,0 +1,112 @@
+
+<head>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+  
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+</head>
+<body>
+<section id="container">
+<!--header start-->
+<header class="header fixed-top clearfix">
+<!--logo start-->
+<div class="brand">
+
+    <a href="/" class="logo">
+        JOMONS
+    </a>
+    <div class="sidebar-toggle-box">
+        <div class="fa fa-bars"></div>
+    </div>
+</div>
+</header>
+<!--header end-->
+<!--sidebar start-->
+<aside>
+    <div id="sidebar" class="nav-collapse">
+        <!-- sidebar menu start-->
+        <div class="leftside-navigation">
+            <ul class="sidebar-menu" id="nav-accordion">
+                <li class="sub-menu">
+					
+                    <a href="/admin/adminPage"><i class="fa fa fa-user"></i>Admin</a>
+                </li>
+				<li class="sub-menu">
+					
+                    <a href="/admin/viewUser"><i class="fa fa-users"></i>View Users</a>
+                </li>
+            </ul>            </div>
+        <!-- sidebar menu end-->
+    </div>
+</aside>
+<!--sidebar end-->
+<!--main content start-->
+<section id="main-content">
+	<section class="wrapper">
+		<div class="table-agile-info">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      Edit user Details
+    </div>
+    <div class="row w3-res-tb">
+      <div class="col-sm-5 m-b-xs">
+        
+        <a href="/admin/newUser"><button class="btn btn-sm btn-default">Insert new User</button></a>
+        <a href="/admin/refresh"><button class="btn btn-sm btn-default">Refresh</button></a>            
+      </div>
+      <div class="col-sm-4">
+      </div>
+      <div class="col-sm-3">
+        <form id="search" action="/admin/search" method="POST">
+       <p>Search with name</p>
+        <div class="input-group">
+          <input type="text" class="input-sm form " name="searchData" placeholder="Search">
+          <span class="input-group-btn"></span>
+            <button class="btn btn-sm btn-default " type="submit"><i class="fa fa-search"></i></button>
+          </span>
+        </div>
+        </form>
+      </div>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-striped b-t b-light" id="productsTable">
+        <thead>
+          <tr>
+            <th>Options</th>
+            <th>Name</th>
+            <th>Mail Id</th>
+            <th>Phone Number</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each response}}
+          <tr>
+            <td><a href="/admin/editData?name={{this.name}}&mail={{this.mail}}&mobile={{this.mobile}}"><button>Edit</button></a>
+             <a href="/admin/delete?name={{this.name}}&mail={{this.mail}}&mobile={{this.mobile}}"><button>Delete</button></a></td>
+            <td>{{this.name}}</td>
+            <td>{{this.mail}}</td>
+            <td>{{this.mobile}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</section>
+ <!-- footer -->
+ <div class="footer">
+    <div>
+      <h4 class="designed">Designed by SHINU VARGHESE</h4>
+    </div>
+  </div>
+<!-- / footer -->
+</section>
+
+<!--main content end-->
+</section>
+<script>
+$(document).ready( function () {
+    $('#productsTable').DataTable();
+} );
+</script>
+</body>
